@@ -1,0 +1,16 @@
+<h3><a href=<%= pieces_path %>>< Back</a></h3>
+<%= form_with scope: :piece, url: pieces_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
