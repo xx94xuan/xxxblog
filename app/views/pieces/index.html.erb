@@ -1,0 +1,11 @@
+<div class='main-container'>
+    <h3><a href=<%= new_piece_path %>>New One</a></h3>
+    <h1 class='header'>All Pieces</h1>
+    <% @pieces.each do |piece| %>
+        <h3 class='headline'>
+            <a href=<%= piece_path(:id => piece.id) %> >
+                <%= piece.title %>
+            </a>
+        </h3>
+    <% end %>
+</div>
