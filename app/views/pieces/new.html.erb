@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= render partial: 'scripts/tinymce' %>
+<% end %>
+
 <h3><a href=<%= pieces_path %>>< Back</a></h3>
 <%= form_with scope: :piece, url: pieces_path, local: true do |form| %>
   <p>
@@ -7,7 +11,7 @@
   
   <p>
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class: 'tinymce'%>
   </p>
   
   <p>
