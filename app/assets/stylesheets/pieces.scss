@@ -15,3 +15,23 @@ h1.header {
 h3.headline {
     width: 60%;
 }
+
+//  LinkButton component
+.btn {
+    border: 2px solid dimgrey;
+    border-radius: 2px;
+    min-width: 108px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    background-color: dimgrey;
+}
+
+.btn-text {
+    display: block;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+}

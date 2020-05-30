@@ -1,4 +1,8 @@
-<a href=<%= pieces_path %>>< Back</a>
+<% content_for :head do %>
+  <%= javascript_pack_tag 'registration' %>
+<% end %>
+
+<%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
 
 <h1><%= @piece.title %></h1>
 <%= text_to_html(@piece.body).html_safe %>
