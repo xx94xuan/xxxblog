@@ -1,20 +1,14 @@
-<% content_for :head do %>
-    <%= javascript_pack_tag 'registration' %>
-  <% end %>
+<%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
+<ul>
+    <h1 class='header'>All Pieces</h1>
 
-<div class='main-container'>
-    <%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
-    <ul>
-        <h1 class='header'>All Pieces</h1>
-
-        <% @pieces.each do |piece| %>
-            <li>
-                <h3 class='headline'>
-                    <a href=<%= piece_path(:id => piece.id) %> >
-                        <%= piece.title %>
-                    </a>
-                </h3>
-            </li>
-        <% end %>
-    </ul>
-</div>
+    <% @pieces.each do |piece| %>
+        <li>
+            <h3 class='headline'>
+                <a href=<%= piece_path(:id => piece.id) %> >
+                    <%= piece.title %>
+                </a>
+            </h3>
+        </li>
+    <% end %>
+</ul>

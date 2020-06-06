@@ -1,23 +1,19 @@
 <% content_for :head do %>
-  <%= render partial: 'scripts/tinymce' %>
-  <%= javascript_pack_tag 'registration' %>
+  <%= stylesheet_link_tag 'redactor' %>
+  <%= render partial: 'scripts/redactor' %>
 <% end %>
 
 <%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
-
-
 <%= form_with scope: :piece, url: pieces_path, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'input-block' %>
   </p>
   
   <p>
     <%= form.label :body %><br>
-    <%= form.text_area :body, class: 'tinymce'%>
+    <%= form.text_area :body, id: 'redactor' %>
   </p>
   
-  <p>
-    <%= form.submit %>
-  </p>
+  <%= form.submit %>
 <% end %>

@@ -1,0 +1,54 @@
+{
+  "application.js": "/bundles/js/application-343e227ee6278902321d.js",
+  "application.js.map": "/bundles/js/application-343e227ee6278902321d.js.map",
+  "components/LinkButton.js": "/bundles/js/components/LinkButton-f4e4b4509c1d912ac73f.js",
+  "components/LinkButton.js.map": "/bundles/js/components/LinkButton-f4e4b4509c1d912ac73f.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/bundles/js/application-343e227ee6278902321d.js"
+      ],
+      "js.map": [
+        "/bundles/js/application-343e227ee6278902321d.js.map"
+      ]
+    },
+    "components/LinkButton": {
+      "js": [
+        "/bundles/js/components/LinkButton-f4e4b4509c1d912ac73f.js"
+      ],
+      "js.map": [
+        "/bundles/js/components/LinkButton-f4e4b4509c1d912ac73f.js.map"
+      ]
+    },
+    "jquery-1": {
+      "js": [
+        "/bundles/js/jquery-1-636f7cf4563c656b181e.js"
+      ],
+      "js.map": [
+        "/bundles/js/jquery-1-636f7cf4563c656b181e.js.map"
+      ]
+    },
+    "redactor/redactor": {
+      "js": [
+        "/bundles/js/redactor/redactor-44f535b85efdfcfa1b84.js"
+      ],
+      "js.map": [
+        "/bundles/js/redactor/redactor-44f535b85efdfcfa1b84.js.map"
+      ]
+    },
+    "registration": {
+      "js": [
+        "/bundles/js/registration-26a7d2e3f91010401afe.js"
+      ],
+      "js.map": [
+        "/bundles/js/registration-26a7d2e3f91010401afe.js.map"
+      ]
+    }
+  },
+  "jquery-1.js": "/bundles/js/jquery-1-636f7cf4563c656b181e.js",
+  "jquery-1.js.map": "/bundles/js/jquery-1-636f7cf4563c656b181e.js.map",
+  "redactor/redactor.js": "/bundles/js/redactor/redactor-44f535b85efdfcfa1b84.js",
+  "redactor/redactor.js.map": "/bundles/js/redactor/redactor-44f535b85efdfcfa1b84.js.map",
+  "registration.js": "/bundles/js/registration-26a7d2e3f91010401afe.js",
+  "registration.js.map": "/bundles/js/registration-26a7d2e3f91010401afe.js.map",
+}
