@@ -1,0 +1,22 @@
+version: '3'
+services:
+  webapp:
+    build:
+      context: ../
+      dockerfile: build/Dockerfile.base-slim
+    image:
+      dockerforxxx/xxxblog:latest
+    command: bundle exec rails server --port 3000 --binding 0.0.0.0
+    ports:
+      - "3001:3000"
+    links:
+      - mongodb
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+
+mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -16,6 +16,23 @@ h3.headline {
     width: 60%;
 }
 
+li.piece-section {
+    position: relative;
+}
+
+a.edit-icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 20px;
+
+    &:after {
+        font-family: 'Font Awesome 5 Free';
+        content: '\f044';
+        color: navy;
+    }
+}
+
 // new
 .input-block {
     width: 100%;

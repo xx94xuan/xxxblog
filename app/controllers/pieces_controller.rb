@@ -3,7 +3,11 @@ class PiecesController < ApplicationController
   end
 
   def index
-    @pieces = Piece.all
+    begin
+      @pieces = Piece.all
+    rescue
+      @pieces = []
+    end
   end
   
   def create
@@ -16,6 +20,16 @@ class PiecesController < ApplicationController
   def show
     @piece = Piece.find(params[:id])
     puts @piece.inspect
+  end
+
+  def edit
+    @piece = Piece.find(params[:id])
+  end
+
+  def update
+    @piece = Piece.find(params[:id])
+    @piece.update(piece_params)
+    redirect_to piece_path(@piece)
   end
 
   private
