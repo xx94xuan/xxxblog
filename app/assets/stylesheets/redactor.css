@@ -75,7 +75,7 @@ body .redactor_box_fullscreen {
 .redactor_editor dl,
 .redactor_editor blockquote,
 .redactor_editor pre {
-	font-size: 15px !important;
+	font-size: 18px !important;
 	line-height: 1.45em !important;
 }
 

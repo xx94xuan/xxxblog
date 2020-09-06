@@ -5,8 +5,6 @@
 
 <%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
 
-
-
 <%= form_for @piece do |form| %>
   <p>
     <%= form.label :title %><br>
@@ -18,5 +16,5 @@
     <%= form.text_area :body, id: 'redactor' %>
   </p>
 
-  <%= form.submit %>
+  <%= form.submit 'Update', class: 'btn' %>
 <% end %>
