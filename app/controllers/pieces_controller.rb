@@ -12,9 +12,12 @@ class PiecesController < ApplicationController
   
   def create
     @piece = Piece.new(piece_params)
- 
-    @piece.save
-    redirect_to @piece
+    @piece.created_at = DateTime.now
+    if @piece.save
+      redirect_to edit_piece_path(@piece)
+    else
+      redirect new_piece_path
+    end
   end
 
   def show
@@ -28,13 +31,23 @@ class PiecesController < ApplicationController
 
   def update
     @piece = Piece.find(params[:id])
-    @piece.update(piece_params)
-    redirect_to piece_path(@piece)
+    @piece.updated_at = DateTime.now
+    if @piece.update(piece_params)
+      redirect_to piece_path(@piece)
+    else
+      redirect_to edit_piece_path(@piece)
+    end
+  end
+
+  def destroy
+    @piece = Piece.find(params[:id])
+    @piece.destroy
+    redirect_to pieces_path
   end
 
   private
 
   def piece_params
-    params.require(:piece).permit(:title, :body)
+    params.require(:piece).permit(:title, :body, :upadted_at, :created_at)
   end
 end

@@ -9,11 +9,11 @@
 
 h1.header {
     margin: 0 auto;
-    width: 50%;
+    text-align: center;
 }
 
 h3.headline {
-    width: 60%;
+    width: 80%;
     font-size: 18px;
     line-height: 28px;
     max-height: 56px;
@@ -22,6 +22,11 @@ h3.headline {
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.updated-time {
+    font-size: 14px;
+    color: gray;
 }
 
 li.piece-section {
@@ -38,6 +43,19 @@ a.edit-icon {
         font-family: 'Font Awesome 5 Free';
         content: '\f044';
         color: navy;
+    }
+}
+
+a.delete-icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 60px;
+
+    &:after {
+        font-family: 'Font Awesome 5 Free';
+        content: '\f2ed';
+        color: rgb(82, 80, 80);
     }
 }
 

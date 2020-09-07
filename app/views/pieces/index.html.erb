@@ -13,7 +13,9 @@
                     <a href=<%= piece_path(:id => piece.id) %> >
                         <%= piece.title %>
                     </a>
+                    <span class='updated-time'> - [<%= (piece.created_at || piece.updated_at).strftime("%b %d, %Y") %>]</span>
                 </h3>
+                <a class='delete-icon' href=<%= delete_piece_path(:id => piece.id) %> data-method='delete'></a>
                 <a class='edit-icon' href=<%= edit_piece_path(:id => piece.id) %>></a>
             </li>
         <% end %>
