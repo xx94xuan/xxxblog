@@ -1,0 +1,17 @@
+<%= react_component("LinkButton", props: {text: 'Exit', link: pieces_path}, prerender: false) %>
+<h3>Not an user yet? Click here to <a href=<%= new_user_path %>>Create an Account</a></h3>
+<br>
+<h3>Log in</h3>
+<%= form_with scope: :user, url: validate_user_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, value: params[:name] || '', class: 'input-block' %>
+  </p>
+  
+  <p>
+    <%= form.label :password %><br>
+    <%= form.text_field :password, value: params[:password] || '', class: 'input-block' %>
+  </p>
+  <%= render partial: 'user/error_msg' %>
+  <%= form.submit 'Login', class: 'btn' %>
+<% end %>

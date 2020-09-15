@@ -2,11 +2,11 @@
   <%= stylesheet_link_tag 'redactor' %>
   <%= render partial: 'scripts/redactor' %>
 <% end %>
-<%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
+<%= react_component("LinkButton", props: {text: 'All Pieces', link: pieces_path}, prerender: false) %>
 <%= form_with scope: :piece, url: pieces_path, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title, class: 'input-block' %>
+    <%= form.text_field :title, :required => true, class: 'input-block' %>
   </p>
   
   <p>

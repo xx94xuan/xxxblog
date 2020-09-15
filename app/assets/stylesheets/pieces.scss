@@ -60,9 +60,19 @@ a.delete-icon {
 }
 
 .btn {
-    padding: 7px;
+    // padding: 7px;
     font-size: 22px;
     color: white;
+}
+
+.login-status {
+    float: right;
+    font-size: 16px;
+}
+
+.user-name {
+    font-size: 18px;
+    text-decoration: underline;
 }
 
 // new
@@ -76,13 +86,13 @@ a.delete-icon {
 
 //  LinkButton component
 .btn {
-    border: 2px solid dimgrey;
+    border: 2px solid #867979;
     border-radius: 2px;
     min-width: 108px;
     height: 40px;
     position: relative;
     display: inline-block;
-    background-color: dimgrey;
+    background-color: #867979;
 }
 
 .btn-text {

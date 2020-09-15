@@ -1,0 +1,19 @@
+<%= react_component("LinkButton", props: {text: 'Exit', link: pieces_path}, prerender: false) %>
+
+<br>
+<h3>Sign up</h3>
+
+<%= form_with scope: :user, url: create_user_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class: 'input-block' %>
+  </p>
+  
+  <p>
+    <%= form.label :password %><br>
+    <%= form.text_field :password, class: 'input-block' %>
+  </p>
+
+  <%= render partial: 'user/error_msg' %>
+  <%= form.submit 'Create Account', class: 'btn' %>
+<% end %>
