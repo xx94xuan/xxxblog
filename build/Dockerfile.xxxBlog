@@ -1,7 +1,7 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
-ENV APP_HOME /xxxBlog
+ENV APP_HOME /xxxblog
 WORKDIR $APP_HOME
 
 RUN gem install bundler

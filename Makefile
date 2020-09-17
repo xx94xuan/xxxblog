@@ -9,7 +9,7 @@ build_base:
 	sh ./build/scripts/build_base.sh
 
 build_app: build_base
-	DOCKERFILE=./build/Dockerfile.xxxBlog \
+	DOCKERFILE=./build/Dockerfile.xxxblog \
 	IMAGE_NAME=$(image_name) \
 	BASE_IMAGE=$(base_image) \
 	sh ./build/scripts/build_app.sh
