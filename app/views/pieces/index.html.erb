@@ -1,34 +1,35 @@
 <% content_for :head do %>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <%= javascript_include_tag 'bundle/indexPieces-bundle.js' %>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <% end %>
 
 <%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
 
 <span class='login-status'>
-    <% if session[:login_user] %>
-        You are sign in as <span class="user-name"><%= session[:user_name] %></span>
-    <% else %>
-        <a href=<%= user_login_path %>>Sign In</a>
-    <% end %>
+  <% if session[:login_user] %>
+    You are sign in as <span class="user-name"><%= session[:user_name] %></span>
+  <% else %>
+    <a href=<%= user_login_path %>>Sign In</a>
+  <% end %>
 </span>
 
 <% if @pieces.present? %>
-    <ul>
-        <h1 class='header'>All Pieces</h1>
+  <ul>
+    <h1 class='header'>All Pieces</h1>
 
-        <% @pieces.each do |piece| %>
-            <li class='piece-section'>
-                <h3 class='headline'>
-                    <a href=<%= piece_path(:id => piece.id) %> >
-                        <%= piece.title %>
-                    </a>
-                    <span class='updated-time'> - [<%= (piece.created_at || piece.updated_at).strftime("%b %d, %Y") %>]</span>
-                </h3>
-                <a class='delete-icon' href=<%= delete_piece_path(:id => piece.id) %> data-method='delete'></a>
-                <a class='edit-icon' href=<%= edit_piece_path(:id => piece.id) %>></a>
-            </li>
-        <% end %>
-    </ul>
+    <% @pieces.each do |piece| %>
+      <li class='piece-section'>
+        <h3 class='headline'>
+          <a href=<%= piece_path(:id => piece.id) %> >
+            <%= piece.title %>
+          </a>
+          <span class='updated-time'> - [<%= (piece.created_at || piece.updated_at).strftime("%b %d, %Y") %>]</span>
+        </h3>
+        <a class='delete-icon' href=<%= delete_piece_path(:id => piece.id) %> data-method='delete'></a>
+        <a class='edit-icon' href=<%= edit_piece_path(:id => piece.id) %>></a>
+      </li>
+    <% end %>
+  </ul>
 <% else %>
-    <p class='no-result'>There's no results, you can create one <a href=<%= new_piece_path %>>here</a></p>
+  <p class='no-result'>There's no results, you can create one <a href=<%= new_piece_path %>>here</a></p>
 <% end %>

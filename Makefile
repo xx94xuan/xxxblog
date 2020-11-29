@@ -1,5 +1,5 @@
 base_image:=dockerforxxx/xxx-blog-base:2.6.3-slim
-image_name:=dockerforxxx/xxx-blog:latest
+image_name:=dockerforxxx/xxxblog:lastest
 force_build?=false
 
 build_base:

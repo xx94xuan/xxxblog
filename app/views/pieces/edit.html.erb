@@ -1,6 +1,8 @@
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'redactor' %>
+  <%= javascript_include_tag "bundle/newPiece-bundle.js" %>
   <%= render partial: 'scripts/redactor' %>
+
+  <%= stylesheet_link_tag 'redactor' %>
 <% end %>
 
 <%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
