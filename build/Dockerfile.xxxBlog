@@ -1,6 +1,8 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
+ENV RAILS_ENV production
+
 ENV APP_HOME /xxxblog
 WORKDIR $APP_HOME
 
@@ -15,6 +17,10 @@ ADD yarn.lock $APP_HOME/yarn.lock
 RUN yarn install
 
 COPY . $APP_HOME
+
+RUN yarn run build:prod
+
+# RUN bundle exec rake assets:precompile
 
 EXPOSE 3000
 CMD bundle exec rails s -b 0.0.0.0 -p 3000
