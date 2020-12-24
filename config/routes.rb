@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   delete '/pieces/:id/delete', to: 'pieces#destroy', as: 'delete_piece'
   resources :pieces
 
+  delete '/events/:id/delete', to: 'events#destroy', as: 'delete_event'
+  resources :events
+
 end

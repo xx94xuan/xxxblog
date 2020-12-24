@@ -1,0 +1,14 @@
+<%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
+
+<div class='event-container'>
+  <h1><%= @event.name %></h1>
+  
+  <p>
+    <strong>From </strong>
+    <%= @event.start_time %>
+    <strong>To</strong>
+    <%= @event.end_time %>
+  </p>
+
+  <p><%= @event.description %></p>
+</div>
