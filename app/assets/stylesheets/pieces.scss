@@ -33,30 +33,30 @@ li.piece-section {
     position: relative;
 }
 
-a.edit-icon {
+a.piece-edit-icon {
     position: absolute;
     display: inline-block;
     top: 0;
     right: 20px;
-
-    &:after {
-        font-family: 'Font Awesome 5 Free';
-        content: '\f044';
-        color: navy;
-    }
 }
 
-a.delete-icon {
+a.edit-icon::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f044';
+    color: navy;
+}
+
+a.piece-delete-icon {
     position: absolute;
     display: inline-block;
     top: 0;
     right: 60px;
+}
 
-    &:after {
-        font-family: 'Font Awesome 5 Free';
-        content: '\f2ed';
-        color: rgb(82, 80, 80);
-    }
+a.delete-icon::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f2ed';
+    color: rgb(82, 80, 80);
 }
 
 .btn {

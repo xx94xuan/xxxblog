@@ -1,0 +1,11 @@
+<div style="display: flex;flex-direction: column;background-color: #E0FFFF;margin-bottom:4px">
+  <div class='row-1'>
+    <span><%= event.start_hour %>~<%= event.end_hour %></span>
+    <div class='action-icons' style='float: right'>
+      <span class="<%= event.done ? 'green-check-icon' : 'gray-check-icon' %>"></span>
+      <a class="delete-icon" href="<%= delete_event_url(:id => event._id) %>"></a>
+      <a class="edit-icon" href="<%= edit_event_url(event._id) %>"></a>
+    </div>
+  </div>
+  <a href="<%= event_url(event._id) %>" data-toogle="tooltip" title="<%= event.description %>"><%= event.name %></a>
+</div>

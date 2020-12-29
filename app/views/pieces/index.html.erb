@@ -1,6 +1,5 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'bundle/indexPieces-bundle.js' %>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <% end %>
 
 <%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
@@ -25,8 +24,8 @@
           </a>
           <span class='updated-time'> - [<%= (piece.created_at || piece.updated_at).strftime("%b %d, %Y") %>]</span>
         </h3>
-        <a class='delete-icon' href=<%= delete_piece_path(:id => piece.id) %> data-method='delete'></a>
-        <a class='edit-icon' href=<%= edit_piece_path(:id => piece.id) %>></a>
+        <a class='delete-icon piece-delete-icon' href="<%= delete_piece_path(:id => piece.id)%>" data-method='delete'></a>
+        <a class='edit-icon piece-edit-icon' href=<%= edit_piece_path(:id => piece.id) %>></a>
       </li>
     <% end %>
   </ul>

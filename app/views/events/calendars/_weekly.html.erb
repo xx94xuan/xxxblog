@@ -2,8 +2,6 @@
   <%= date %>
 
   <% events.each do |event| %>
-    <div>
-      <a href="<%= event_url(event._id) %>"><%= event.name %></a>
-    </div>
+    <%= render partial: 'events/calendars/event_show', locals: {event: event} %>
   <% end %>
 <% end %>

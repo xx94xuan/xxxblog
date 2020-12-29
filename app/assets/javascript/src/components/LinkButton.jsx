@@ -15,7 +15,7 @@ export default class LinkButton extends React.Component {
     let className = this.props.class || '';
 
     return (
-      <div>
+      <div className='link-btn'>
         <div className='btn'>
           <a className={`btn-text ${className}`} href={this.props.link}>{this.props.text}</a>
         </div>

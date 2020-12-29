@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   # before_action :init, unless: -> { logged_in? }, only: [:new, :create, :destroy]
-  # before_action :set_login_user
+  # before_action :set_daily_time_range
 
   def new
   end
@@ -8,18 +8,27 @@ class EventsController < ApplicationController
   def index
     begin
       @events = Event.all.order('time DESC')
+      # @daily_events = daily_events.order('time DESC')
     rescue
       @events = []
     end
   end
+
+  def daily_events(day = DateTime.now)
+    events = []
+    Event.all.each do |event|
+      events.push(event) if event.start_time.at_beginning_of_day == day.at_beginning_of_day
+    end
+    events
+  end
   
   def create
-    @event = Event.new(piece_params)
+    @event = Event.new(event_params)
     @event.created_at = DateTime.now
     if @event.save
-      redirect_to edit_piece_path(@event)
+      redirect_to events_path
     else
-      redirect new_piece_path
+      redirect new_event_path
     end
   end
 
@@ -35,22 +44,22 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.updated_at = DateTime.now
-    if @event.update(piece_params)
-      redirect_to piece_path(@event)
+    if @event.update(event_params)
+      redirect_to event_path(@event)
     else
-      redirect_to edit_piece_path(@event)
+      redirect_to edit_event_path(@event)
     end
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to pieces_path
+    redirect_to events_path
   end
 
   private
 
   def event_params
-    params.require(:piece).permit(:name, :time, :upadted_at, :created_at)
+    params.require(:event).permit(:name, :start_time, :end_time, :description, :done, :upadted_at, :created_at)
   end
 end

@@ -1,5 +1,14 @@
+<% content_for :footer do%>
+  <%= javascript_include_tag 'bundle/indexEvents-bundle.js' %>
+<% end %>
+
 <h1>Events</h1>
 
-<div>Day Of The Year: <%= DateTime.now.yday %></div>
+<div>Day Of The Year: <strong><%= DateTime.now.yday %></strong></div>
+
+<div id='real-time' style='float:right'></div>
+
+<%= react_component "LinkButton", props: {text: 'Add Event', link: new_event_url} %>
 
 <%= render partial: 'events/calendars/weekly' %>
+
