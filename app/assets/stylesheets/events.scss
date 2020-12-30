@@ -1,9 +1,10 @@
 @import "simple_calendar";
+@import 'variables';
 
 .simple-calendar {
   .day {
     div {
-      padding: 2px;
+      padding: $twoSpace;
     }
   }
 
@@ -30,5 +31,12 @@
 
 
 .calendar-scale-radio {
-  padding: 20px;
+  padding: $twentySpace;
+}
+
+.event-infos {
+  display: flex;
+  flex-direction: column;
+  background-color: $azure;
+  margin-bottom:4px
 }

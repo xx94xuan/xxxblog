@@ -4,20 +4,17 @@ var webpack = require("webpack");
 var config = {
   context: path.resolve(__dirname, 'app', 'assets', 'javascript'),
   entry: {
-    newPiece: [
+    redactor: [
       "./src/jquery-1.9.0.min.js",
       "./src/redactor/redactor.min.js"
     ],
-    indexPieces: [
+    componentsRegistration: [
       './src/components/registration.jsx'
     ],
-    indexvents: [
-      './src/real_time_clock.js',
-      './src/components/registration.jsx'
+    realTimeClock: [
+      './src/components/registration.jsx',
+      './src/real_time_clock.js'
     ],
-    editEvents: [
-      './src/components/registration.jsx'
-    ]
   },
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascript', 'bundle'),

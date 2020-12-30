@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>xxxblog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= render partial: 'scripts/font_awesome'%>
+
+    <%= javascript_include_tag 'bundle/componentsRegistration-bundle.js' %>
+
+    <%= yield :head %>
+  </head>
+
+  <body>
+    <%= react_component('Header',
+      props: {
+        pieces_path: pieces_path,
+        events_path: events_path,
+        login_path: user_login_path,
+        register_path: new_user_path,
+      }, prerender: false)
+    %>
+
+    <span class='login-status'>
+      <% if session[:login_user] %>
+        You are sign in as <span class="user-name"><%= session[:user_name] %></span>
+      <% elsif !is_login_page? %>
+        <a href=<%= user_login_path %>>Sign In</a>
+      <% end %>
+    </span>
+
+    <div class='main-container'>
+      <%= yield %>
+    </div>
+    <%= yield :footer %>
+  </body>
+</html>

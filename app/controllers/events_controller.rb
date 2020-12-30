@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  layout 'main'
+  
+  before_action :init, unless: -> { logged_in? }
 
   def new
   end
@@ -6,7 +9,6 @@ class EventsController < ApplicationController
   def index
     begin
       @events = Event.all.order('time DESC')
-      # @daily_events = daily_events.order('time DESC')
     rescue
       @events = []
     end

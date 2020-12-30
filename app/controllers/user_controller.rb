@@ -1,20 +1,10 @@
 class UserController < ApplicationController
+  layout 'main'
+
   def new
   end
 
   def login
-  end
-
-  def validate_user
-    begin
-      @user = User.find_by(user_params)
-      session[:login_user] = 'true'
-      session[:current_user_id] = @user.id
-      redirect_to pieces_path
-    rescue
-      flash[:error] = "User Name OR Password incorrect. Try again."
-      redirect_to user_login_path
-    end
   end
 
   def create
@@ -33,6 +23,18 @@ class UserController < ApplicationController
         flash[:error] = "Failed to save user, try again."
         redirect_to new_user_path
       end
+    end
+  end
+
+  def validate_user
+    begin
+      @user = User.find_by(user_params)
+      session[:login_user] = 'true'
+      session[:current_user_id] = @user.id
+      redirect_to pieces_path
+    rescue
+      flash[:error] = "User Name OR Password incorrect. Try again."
+      redirect_to user_login_path
     end
   end
 

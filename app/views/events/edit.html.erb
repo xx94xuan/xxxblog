@@ -6,12 +6,12 @@
 
   <p>
     <%= form.label :start_time %><br>
-    <%= form.datetime_field :start_time, class: 'input-block' %>
+    <%= form.datetime_field :start_time, class: 'input-block date-picker' %>
   </p>
 
   <p>
     <%= form.label :end_time %><br>
-    <%= form.datetime_field :end_time, class: 'input-block' %>
+    <%= form.datetime_field :end_time, class: 'input-block date-picker' %>
   </p>
 
   <p>
@@ -25,4 +25,6 @@
   </p>
 
   <%= form.submit 'Update', class: 'btn' %>
+  <%= react_component("LinkButton", props: {text: 'Cancel', link: events_path}, prerender: false) %>
+
 <% end %>

@@ -1,19 +1,80 @@
+@import 'variables';
+
 h1 {
   text-align: center;
 }
 
+.login-status {
+  float: right;
+  font-size: 16px;
+  margin: $twentySpace;
+}
+
 .link-btn {
-  padding: 20px 0;
+  padding: $twentySpace 0;
 }
 
 .green-check-icon::after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f058';
-  color: green;
+  font-family: $fontAwesome5;
+  content: $checkIcon;
+  color: $green;
 }
 
 .gray-check-icon::after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f058';
-  color: grey;
+  font-family: $fontAwesome5;
+  content: $checkIcon;
+  color: $lightGrey;
+}
+
+.input-block.date-picker {
+  width: 25%;
+}
+
+.btns-row {
+  display: flex;
+}
+
+
+// ================ LinkButton component ==================
+.btn {
+  border: $twoSpace solid $btn;
+  border-radius: $twoSpace;
+  min-width: 108px;
+  height: $fortySpace;
+  position: relative;
+  display: inline-block;
+  background-color: $btn;
+}
+
+.btn-text {
+  display: block;
+  color: $white;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+
+// ====================== Header Component =================
+.header-container {
+  width: 100%;
+  height: $sixtySpace;
+  background-color: $white;
+  border-bottom: $oneSpace solid $lightGrey;
+  display: flex;
+}
+
+.item-text {
+  font-size: $twentySpace;
+  color: $black;
+  display: inline-block;
+  width: 25%;
+  border: $oneSpace solid $lightGrey;
+  text-align: center;
+  padding-top: $twentySpace;
+
+  &:hover {
+    background-color: $ghostWhite;
+  }
 }

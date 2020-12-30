@@ -1,9 +1,11 @@
+@import 'variables';
+
 // Place all the styles related to the Pieces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .main-container, .piece-container {
-    margin: 20px auto;
+    margin: $sixtySpace auto;
     width: 80%;
 }
 
@@ -26,7 +28,7 @@ h3.headline {
 
 .updated-time {
     font-size: 14px;
-    color: gray;
+    color: $darkgrey;
 }
 
 li.piece-section {
@@ -37,37 +39,31 @@ a.piece-edit-icon {
     position: absolute;
     display: inline-block;
     top: 0;
-    right: 20px;
+    right: $twentySpace;
 }
 
 a.edit-icon::after {
-    font-family: 'Font Awesome 5 Free';
-    content: '\f044';
-    color: navy;
+    font-family: $fontAwesome5;
+    content: $editIcon;
+    color: $lightBlack;
 }
 
 a.piece-delete-icon {
     position: absolute;
     display: inline-block;
     top: 0;
-    right: 60px;
+    right: $sixtySpace;
 }
 
 a.delete-icon::after {
-    font-family: 'Font Awesome 5 Free';
-    content: '\f2ed';
-    color: rgb(82, 80, 80);
+    font-family: $fontAwesome5;
+    content: $deleteIcon;
+    color: $lightBlack;
 }
 
 .btn {
-    // padding: 7px;
     font-size: 22px;
-    color: white;
-}
-
-.login-status {
-    float: right;
-    font-size: 16px;
+    color: $white;
 }
 
 .user-name {
@@ -79,27 +75,8 @@ a.delete-icon::after {
 .input-block {
     font-size: 18px;
     width: 100%;
-    height: 30px;
-    border: 1px solid #ddd;
-    padding: 4px 12px;
+    height: $thirtySpace;
+    border: $oneSpace solid $lightBlack;
+    padding: $fiveSpace 12px;
 }
 
-//  LinkButton component
-.btn {
-    border: 2px solid #867979;
-    border-radius: 2px;
-    min-width: 108px;
-    height: 40px;
-    position: relative;
-    display: inline-block;
-    background-color: #867979;
-}
-
-.btn-text {
-    display: block;
-    color: white;
-    padding: 7px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 22px;
-}

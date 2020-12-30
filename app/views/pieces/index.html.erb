@@ -1,16 +1,4 @@
-<% content_for :head do %>
-  <%= javascript_include_tag 'bundle/indexPieces-bundle.js' %>
-<% end %>
-
 <%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
-
-<span class='login-status'>
-  <% if session[:login_user] %>
-    You are sign in as <span class="user-name"><%= session[:user_name] %></span>
-  <% else %>
-    <a href=<%= user_login_path %>>Sign In</a>
-  <% end %>
-</span>
 
 <% if @pieces.present? %>
   <ul>

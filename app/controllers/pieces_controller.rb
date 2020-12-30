@@ -1,6 +1,7 @@
 class PiecesController < ApplicationController
+  layout 'main'
+  
   before_action :init, unless: -> { logged_in? }, only: [:new, :create, :destroy]
-  before_action :set_login_user
 
   def new
   end
@@ -52,12 +53,5 @@ class PiecesController < ApplicationController
 
   def piece_params
     params.require(:piece).permit(:title, :body, :upadted_at, :created_at)
-  end
-
-  def set_login_user
-    if session[:login_user] == 'true' && session[:current_user_id]
-      @user = User.find(id: session[:current_user_id])
-      session[:user_name] = @user.name
-    end
   end
 end

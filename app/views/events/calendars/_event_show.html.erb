@@ -1,9 +1,9 @@
-<div style="display: flex;flex-direction: column;background-color: #E0FFFF;margin-bottom:4px">
+<div class="event-infos">
   <div class='row-1'>
     <span><%= event.start_hour %>~<%= event.end_hour %></span>
     <div class='action-icons' style='float: right'>
       <span class="<%= event.done ? 'green-check-icon' : 'gray-check-icon' %>"></span>
-      <a class="delete-icon" href="<%= delete_event_url(:id => event._id) %>"></a>
+      <a class="delete-icon" data-method='delete' href="<%= event_url(:id => event._id) %>"></a>
       <a class="edit-icon" href="<%= edit_event_url(event._id) %>"></a>
     </div>
   </div>
