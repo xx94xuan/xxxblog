@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+}
+
+.link-btn {
+  padding: 20px 0;
+}
+
+.green-check-icon::after {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f058';
+  color: green;
+}
+
+.gray-check-icon::after {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f058';
+  color: grey;
+}

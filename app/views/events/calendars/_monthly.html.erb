@@ -1,0 +1,10 @@
+<%= month_calendar(events: @events) do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div>
+    <a href="<%= event_url(event._id) %>" data-toogle="tooltip" title="<%= event.description %>"><%= event.name %></a>
+    <span><%= event.start_hour %> ~ <%= event.end_hour %></span>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,7 @@
+<%= week_calendar(events: @events) do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <%= render partial: 'events/calendars/event_show', locals: {event: event} %>
+  <% end %>
+<% end %>

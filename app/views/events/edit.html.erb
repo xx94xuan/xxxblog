@@ -1,0 +1,28 @@
+<%= form_for @event do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class: 'input-block' %>
+  </p>
+
+  <p>
+    <%= form.label :start_time %><br>
+    <%= form.datetime_field :start_time, class: 'input-block' %>
+  </p>
+
+  <p>
+    <%= form.label :end_time %><br>
+    <%= form.datetime_field :end_time, class: 'input-block' %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, id: 'redactor', cols: '80', rows: "10" %>
+  </p>
+
+  <p>
+    <%= form.label :done %><br>
+    <%= form.check_box :done %>
+  </p>
+
+  <%= form.submit 'Update', class: 'btn' %>
+<% end %>

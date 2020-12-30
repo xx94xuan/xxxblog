@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'javas
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( bundle/newPiece-bundle.js )
 Rails.application.config.assets.precompile += %w( bundle/indexPieces-bundle.js )
+Rails.application.config.assets.precompile += %w( bundle/indexEvents-bundle.js )
+Rails.application.config.assets.precompile += %w( bundle/editEvents-bundle.js )

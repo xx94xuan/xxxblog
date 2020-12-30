@@ -1,0 +1,19 @@
+<% content_for :footer do%>
+  <%= javascript_include_tag 'bundle/indexEvents-bundle.js' %>
+<% end %>
+
+<%= react_component("LinkButton", props: {text: 'Back', link: events_path}, prerender: false) %>
+
+<div class='event-container'>
+  <%= @event.done ? "Done" : '' %>
+  <h1><%= @event.name %></h1>
+  <h2><%= @event.start_date %></h2>
+  <p>
+    <strong>From </strong>
+    <%= @event.start_hour %>
+    <strong>To</strong>
+    <%= @event.end_hour %>
+  </p>
+
+  <p><strong>Description:</strong><br> <%= @event.description %></p>
+</div>

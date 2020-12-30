@@ -1,0 +1,34 @@
+@import "simple_calendar";
+
+.simple-calendar {
+  .day {
+    div {
+      padding: 2px;
+    }
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}
+
+
+.calendar-scale-radio {
+  padding: 20px;
+}

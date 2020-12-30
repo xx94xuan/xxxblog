@@ -11,6 +11,13 @@ var config = {
     indexPieces: [
       './src/components/registration.jsx'
     ],
+    indexvents: [
+      './src/real_time_clock.js',
+      './src/components/registration.jsx'
+    ],
+    editEvents: [
+      './src/components/registration.jsx'
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascript', 'bundle'),
