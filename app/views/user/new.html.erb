@@ -1,7 +1,7 @@
 <%= react_component("LinkButton", props: {text: 'Exit', link: pieces_path}, prerender: false) %>
 
 <br>
-<h3>Sign up</h3>
+<h3>Create a new account</h3>
 
 <%= form_with scope: :user, url: create_user_path, local: true do |form| %>
   <p>
@@ -11,9 +11,10 @@
   
   <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password, class: 'input-block' %>
+    <%= form.password_field :password, class: 'input-block' %>
   </p>
 
-  <%= render partial: 'user/error_msg' %>
+  <%= render partial: 'messages/error' %>
+
   <%= form.submit 'Create Account', class: 'btn' %>
 <% end %>

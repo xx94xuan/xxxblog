@@ -1,7 +1,7 @@
 <%= react_component("LinkButton", props: {text: 'Back', link: events_path}, prerender: false) %>
 
 <div class='event-container'>
-  <%= @event.done ? "Done" : '' %>
+  <div class="done-label <%= @event.done ? 'thumbsup-icon' : '' %>"><%= @event.done ? 'Done ' : 'Pending...' %></div>
   <h1><%= @event.name %></h1>
   <h2><%= @event.start_date %></h2>
   <p>

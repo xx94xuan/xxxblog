@@ -10,8 +10,8 @@
   
   <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password, value: params[:password] || '', class: 'input-block' %>
+    <%= form.password_field :password, value: params[:password] || '', class: 'input-block' %>
   </p>
-  <%= render partial: 'user/error_msg' %>
+  <%= render partial: 'messages/error' %>
   <%= form.submit 'Login', class: 'btn' %>
 <% end %>

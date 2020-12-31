@@ -10,6 +10,8 @@ class Event
   field :created_at, type: DateTime
   field :done, type: Boolean, default: false
 
+  belongs_to :user, dependent: :nullify
+
   index(time: -1)
 
   def start_date

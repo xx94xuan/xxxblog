@@ -2,6 +2,15 @@
 @import 'variables';
 
 .simple-calendar {
+  .calendar-heading {
+    font-size: 28px;
+    text-align: center;
+    margin: 10px;
+
+    .calendar-title {
+      font-weight: bold;
+    }
+  }
   .day {
     div {
       padding: $twoSpace;
@@ -32,6 +41,16 @@
 
 .calendar-scale-radio {
   padding: $twentySpace;
+}
+
+.done-label {
+  float: right;
+  font-size: 20px;
+  color: $darkgrey;
+
+  &.thumbsup-icon {
+    color: $green;
+  }
 }
 
 .event-infos {

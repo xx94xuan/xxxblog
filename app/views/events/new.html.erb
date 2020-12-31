@@ -24,6 +24,8 @@
     <%= form.check_box :done %>
   </p>
   
+  <%= render partial: 'messages/error' %>
+
   <%= form.submit 'Save', class: 'btn' %>
   <%= react_component("LinkButton", props: {text: 'Cancel', link: events_path}, prerender: false) %>
 

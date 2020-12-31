@@ -7,6 +7,13 @@ class UserController < ApplicationController
   def login
   end
 
+  def logout
+    if session[:login_user]
+      session[:login_user] = false
+    end
+    redirect_to user_login_path
+  end
+
   def create
     begin
       exsit_user = User.find_by({name: user_params[:name]})
@@ -18,6 +25,7 @@ class UserController < ApplicationController
       @user = User.new(user_params)
       @user.created_at = DateTime.now
       if @user.save
+        # flash[:notice] = "#{@user.name} has been created, click Login to surfing"
         redirect_to user_login_path({:params => user_params})
       else
         flash[:error] = "Failed to save user, try again."
@@ -29,7 +37,7 @@ class UserController < ApplicationController
   def validate_user
     begin
       @user = User.find_by(user_params)
-      session[:login_user] = 'true'
+      session[:login_user] = true
       session[:current_user_id] = @user.id
       redirect_to pieces_path
     rescue

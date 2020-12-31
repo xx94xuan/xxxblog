@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/user/register', to: 'user#new', as: 'new_user'
   post '/user/create', to: 'user#create', as: 'create_user'
   get '/user/login', to: 'user#login', as: 'user_login'
+  get 'user/logout', to: 'user#logout', as: 'user_logout'
   post '/user/validate_user', to: 'user#validate_user', as: 'validate_user'
 
   delete '/pieces/:id/delete', to: 'pieces#destroy', as: 'delete_piece'

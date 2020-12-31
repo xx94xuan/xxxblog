@@ -23,7 +23,13 @@ h1 {
 .gray-check-icon::after {
   font-family: $fontAwesome5;
   content: $checkIcon;
-  color: $lightGrey;
+  color: $darkgrey;
+}
+
+.thumbsup-icon::after {
+  font-family: $fontAwesome5;
+  content: $thumbsupIcon;
+  color: $green;
 }
 
 .input-block.date-picker {

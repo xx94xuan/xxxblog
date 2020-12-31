@@ -8,7 +8,7 @@ class EventsController < ApplicationController
 
   def index
     begin
-      @events = Event.all.order('time DESC')
+      @events = @user.events.all.order('time DESC')
     rescue
       @events = []
     end
@@ -16,33 +16,34 @@ class EventsController < ApplicationController
 
   def daily_events(day = DateTime.now)
     events = []
-    Event.all.each do |event|
+    @user.events.all.each do |event|
       events.push(event) if event.start_time.at_beginning_of_day == day.at_beginning_of_day
     end
     events
   end
   
   def create
-    @event = Event.new(event_params)
+    @event = @user.events.new(event_params)
     @event.created_at = DateTime.now
     if @event.save
       redirect_to events_path
     else
-      redirect new_event_path
+      flash[:error] = "Failed to save this event."
+      redirect_to new_event_path
     end
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = @user.events.find(params[:id])
     puts @event.inspect
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = @user.events.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = @user.events.find(params[:id])
     @event.updated_at = DateTime.now
     if @event.update(event_params)
       redirect_to event_path(@event)
@@ -52,7 +53,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = @user.events.find(params[:id])
     @event.destroy
     redirect_to events_path
   end
