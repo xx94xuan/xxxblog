@@ -5,7 +5,6 @@ h1 {
 }
 
 .login-status {
-  float: right;
   font-size: 16px;
   margin: $twentySpace;
 }
@@ -13,6 +12,36 @@ h1 {
 .link-btn {
   padding: $twentySpace 0;
 }
+
+.input-block.date-picker {
+  max-width: 100%;
+}
+
+.btns-row {
+  display: flex;
+}
+
+@media ($var-in-desktop) {
+  .mobile {
+    display: none;
+  }
+
+  .login-status {
+    float: right;
+  }
+}
+
+@media ($var-in-mobile) {
+  .desktop {
+    display: none;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+}
+
+// ===== default Icons ======
 
 .green-check-icon::after {
   font-family: $fontAwesome5;
@@ -32,12 +61,16 @@ h1 {
   color: $green;
 }
 
-.input-block.date-picker {
-  width: 25%;
+.edit-icon::after {
+    font-family: $fontAwesome5;
+    content: $editIcon;
+    color: $lightBlack;
 }
 
-.btns-row {
-  display: flex;
+.delete-icon::after {
+    font-family: $fontAwesome5;
+    content: $deleteIcon;
+    color: $lightBlack;
 }
 
 // ================ LinkButton component ==================
@@ -64,30 +97,39 @@ h1 {
   font-size: 22px;
 }
 
-
 // ====================== Header Component =================
 .header-container {
   width: 100%;
-  height: $sixtySpace;
   background-color: $white;
   border-bottom: $oneSpace solid $lightGrey;
   display: flex;
+  height: 80px;
 }
 
 .item-text {
-  font-size: $twentySpace;
   color: $black;
   display: inline-block;
   width: 25%;
-  border: $oneSpace solid $lightGrey;
+  border: $oneSpace solid $darkgrey;
   text-align: center;
-  padding-top: $twentySpace;
+  padding-top: 25px;
+  box-shadow: 0 1px 1px 1px black;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     background-color: $ghostWhite;
   }
 }
 
+@media ($var-in-desktop) {
+  .header-container {
+    height: $sixtySpace;
+  }
+  
+  .item-text {
+    font-size: $twentySpace;
+    padding-top: $twentySpace;
+  }  
+}
 
 // ============= UnionButton ========
 .default-form-btn {

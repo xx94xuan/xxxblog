@@ -8,7 +8,7 @@ class PiecesController < ApplicationController
 
   def index
     begin
-      @pieces = @user.pieces.all || []
+      @pieces = @user.pieces.all.order('created_at DESC') || []
     rescue
       @pieces = []
     end

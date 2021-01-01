@@ -10,6 +10,10 @@
     <strong>To</strong>
     <%= @event.end_hour %>
   </p>
+  <br>
 
-  <p><strong>Description:</strong><br> <%= @event.description %></p>
+  <p><strong>Description:</strong><br> <%= text_to_html(@event.description).html_safe %></p>
 </div>
+
+<%= react_component('LinkButton', props: {text: 'Edit', link: edit_event_path(:id => @event.id)}) %>
+<%= react_component('LinkButton', props: {text: 'Delete', link: delete_event_path(:id => @event.id)}) %>

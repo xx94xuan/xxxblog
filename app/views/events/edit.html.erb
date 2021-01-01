@@ -1,3 +1,10 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "bundle/redactor-bundle.js" %>
+  <%= render partial: 'scripts/redactor' %>
+
+  <%= stylesheet_link_tag 'redactor' %>
+<% end %>
+
 <%= form_for @event do |form| %>
   <p>
     <%= form.label :name %><br>
@@ -16,7 +23,7 @@
 
   <p>
     <%= form.label :description %><br>
-    <%= form.text_area :description, id: 'redactor', cols: '80', rows: "10" %>
+    <%= form.text_area :description, id: 'redactor' %>
   </p>
 
   <p>

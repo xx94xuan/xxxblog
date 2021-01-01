@@ -1,7 +1,4 @@
-<%= react_component("LinkButton", props: {text: 'Exit', link: pieces_path}, prerender: false) %>
-
-<br>
-<h3>Create a new account</h3>
+<h1>Create a new account</h1>
 
 <%= form_with scope: :user, url: create_user_path, local: true do |form| %>
   <p>

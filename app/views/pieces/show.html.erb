@@ -4,3 +4,6 @@
   <h1><%= @piece.title %></h1>
   <%= text_to_html(@piece.body).html_safe %>
 </div>
+
+<%= react_component('LinkButton', props: {text: 'Edit', link: edit_piece_path(:id => @piece.id)}) %>
+<%= react_component('LinkButton', props: {text: 'Delete', link: delete_piece_path(:id => @piece.id)}) %>

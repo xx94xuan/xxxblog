@@ -5,8 +5,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .main-container, .piece-container {
-    margin: $sixtySpace auto;
-    width: 80%;
+    margin: $twentySpace;
 }
 
 h1.header {
@@ -15,7 +14,6 @@ h1.header {
 }
 
 h3.headline {
-    width: 80%;
     font-size: 18px;
     line-height: 28px;
     max-height: 56px;
@@ -35,31 +33,20 @@ li.piece-section {
     position: relative;
 }
 
-a.piece-edit-icon {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    right: $twentySpace;
-}
+// a.piece-edit-icon {
+//     position: absolute;
+//     display: inline-block;
+//     top: 0;
+//     right: $twentySpace;
+// }
 
-a.edit-icon::after {
-    font-family: $fontAwesome5;
-    content: $editIcon;
-    color: $lightBlack;
-}
+// a.piece-delete-icon {
+//     position: absolute;
+//     display: inline-block;
+//     top: 0;
+//     right: $sixtySpace;
+// }
 
-a.piece-delete-icon {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    right: $sixtySpace;
-}
-
-a.delete-icon::after {
-    font-family: $fontAwesome5;
-    content: $deleteIcon;
-    color: $lightBlack;
-}
 
 .btn {
     font-size: 22px;
@@ -71,10 +58,22 @@ a.delete-icon::after {
     text-decoration: underline;
 }
 
+@media ($var-in-desktop) {
+    .main-container, .piece-container {
+        margin: $sixtySpace auto;
+        width: 80%;
+    }
+
+    h3.headline {
+        width: 80%;
+    }
+}
+
+
 // new
 .input-block {
     font-size: 18px;
-    width: 100%;
+    max-width: 100%;
     height: $thirtySpace;
     border: $oneSpace solid $lightBlack;
     padding: $fiveSpace 12px;

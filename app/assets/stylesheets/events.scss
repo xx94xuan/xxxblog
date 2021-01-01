@@ -6,6 +6,9 @@
     font-size: 28px;
     text-align: center;
     margin: 10px;
+    @media ($var-in-mobile) {
+      font-size: 20px;
+    }
 
     .calendar-title {
       font-weight: bold;
@@ -58,4 +61,8 @@
   flex-direction: column;
   background-color: $azure;
   margin-bottom:4px
+}
+
+.action-icons {
+  float: right;
 }
