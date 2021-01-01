@@ -24,7 +24,7 @@
     <%= form.check_box :done %>
   </p>
 
-  <%= form.submit 'Update', class: 'btn' %>
+  <%= react_component('UnionButton', props: { value: 'Update', type: 'submit'} )%>
   <%= react_component("LinkButton", props: {text: 'Cancel', link: events_path}, prerender: false) %>
 
 <% end %>

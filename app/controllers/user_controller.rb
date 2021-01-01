@@ -8,8 +8,10 @@ class UserController < ApplicationController
   end
 
   def logout
-    if session[:login_user]
+    if session[:login_user] == true
       session[:login_user] = false
+      session[:user_name] = nil
+      session[:current_user_id] = nil
     end
     redirect_to user_login_path
   end

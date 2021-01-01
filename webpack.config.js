@@ -4,8 +4,10 @@ var webpack = require("webpack");
 var config = {
   context: path.resolve(__dirname, 'app', 'assets', 'javascript'),
   entry: {
-    redactor: [
+    jquerySource: [
       "./src/jquery-1.9.0.min.js",
+    ],
+    redactor: [
       "./src/redactor/redactor.min.js"
     ],
     componentsRegistration: [

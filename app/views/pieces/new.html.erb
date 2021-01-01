@@ -15,6 +15,6 @@
     <%= form.label :body %><br>
     <%= form.text_area :body, id: 'redactor' %>
   </p>
-  
-  <%= form.submit 'Save', class: 'btn' %>
+
+  <%= react_component('UnionButton', props: { value: 'Save', type: 'submit'} )%>
 <% end %>

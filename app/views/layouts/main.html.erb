@@ -5,11 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag 'bundle/jquerySource-bundle.js' %>
+    <%= javascript_include_tag 'bundle/componentsRegistration-bundle.js' %>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= render partial: 'scripts/font_awesome'%>
-
-    <%= javascript_include_tag 'bundle/componentsRegistration-bundle.js' %>
 
     <%= yield :head %>
   </head>
@@ -25,7 +26,7 @@
     %>
 
     <span class='login-status'>
-      <% if session[:login_user] %>
+      <% if session[:login_user] == true %>
         You are sign in as <span class="user-name"><%= session[:user_name] %></span>. <a href=<%= user_logout_path %>>Log out</a>
       <% elsif !is_login_page? %>
         <a href=<%= user_login_path %>>Sign In</a>

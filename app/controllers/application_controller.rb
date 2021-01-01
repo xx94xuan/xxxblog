@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_login_user
 
   def init
-    render 'user/login'
+    redirect_to '/user/login'
   end
 
   def logged_in?

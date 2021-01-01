@@ -1,7 +1,7 @@
 class PiecesController < ApplicationController
   layout 'main'
   
-  before_action :init, unless: -> { logged_in? }, only: [:new, :create, :destroy]
+  before_action :init, unless: -> { logged_in? }
 
   def new
   end
@@ -18,7 +18,7 @@ class PiecesController < ApplicationController
     @piece = @user.pieces.new(piece_params)
     @piece.created_at = DateTime.now
     if @piece.save
-      redirect_to edit_piece_path(@piece)
+      redirect_to pieces_path
     else
       redirect_to new_piece_path
     end

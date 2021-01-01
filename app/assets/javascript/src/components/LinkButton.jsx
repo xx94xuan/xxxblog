@@ -12,12 +12,13 @@ export default class LinkButton extends React.Component {
   }
 
   render() {
-    let className = this.props.class || '';
+    let { linkClass, text, link, union, handleClick } = this.props;
+    let clickProps = union ? {onClick: handleClick} : '';
 
     return (
       <div className='link-btn'>
         <div className='btn'>
-          <a className={`btn-text ${className}`} href={this.props.link}>{this.props.text}</a>
+          <a className={`btn-text ${linkClass}`} href={link} {...clickProps}>{text}</a>
         </div>
       </div>
     );

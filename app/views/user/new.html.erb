@@ -16,5 +16,5 @@
 
   <%= render partial: 'messages/error' %>
 
-  <%= form.submit 'Create Account', class: 'btn' %>
+  <%= react_component('UnionButton', props: { value: 'Create Account', type: 'submit'} )%>
 <% end %>

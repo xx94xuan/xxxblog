@@ -13,5 +13,5 @@
     <%= form.password_field :password, value: params[:password] || '', class: 'input-block' %>
   </p>
   <%= render partial: 'messages/error' %>
-  <%= form.submit 'Login', class: 'btn' %>
+  <%= react_component('UnionButton', props: { value: 'Login', type: 'submit'} )%>
 <% end %>

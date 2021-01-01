@@ -40,7 +40,6 @@ h1 {
   display: flex;
 }
 
-
 // ================ LinkButton component ==================
 .btn {
   border: $twoSpace solid $btn;
@@ -50,6 +49,10 @@ h1 {
   position: relative;
   display: inline-block;
   background-color: $btn;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn-text {
@@ -83,4 +86,10 @@ h1 {
   &:hover {
     background-color: $ghostWhite;
   }
+}
+
+
+// ============= UnionButton ========
+.default-form-btn {
+  display: none;
 }
