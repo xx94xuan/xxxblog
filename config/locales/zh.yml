@@ -1,0 +1,32 @@
+zh:
+  layouts:
+    signInStatusText: '目前登录账号是'
+    logOutText: '退出'
+    logInText: '登录'
+  input:
+    nameLabel: '名字'
+    startTimeLabel: '起始时间'
+    endTimeLabel: '结束时间'
+    descriptionLabel: '详情'
+    doneLabel: '完成'
+  button:
+    saveText: '保存'
+    updateText: '更新'
+    cancelLabel: '取消'
+    backLabel: '返回'
+    editLabel: '编辑'
+    deleteLabel: '删除'
+    newOnePieceLabel: '新增'
+  events:
+    headingText: '事件'
+    addEventText: '添加事件'
+    dayOfYearText: '今年的第几天: '
+    newEventText: '添加事件'
+    show:
+      fromText: '从'
+      toText: '到'
+      descriptionText: '详情'
+      doneText: '完成'
+      pendingText: '未完待续...'
+  pieces:
+    allPiecesText: '所有文章'

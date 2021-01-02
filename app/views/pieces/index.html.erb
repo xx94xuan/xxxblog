@@ -1,7 +1,7 @@
-<%= react_component("LinkButton", props: {text: 'New One', link: new_piece_path}, prerender: false) %>
+<%= react_component("LinkButton", props: {text: I18n.t('button.newOnePieceLabel'), link: new_piece_path}, prerender: false) %>
 
 <% if @pieces.present? %>
-  <h1 class='header'>All Pieces</h1>
+  <h1 class='header'><%= I18n.t('pieces.allPiecesText') %></h1>
   <ul>
     <% @pieces.each do |piece| %>
       <li class='piece-section'>
