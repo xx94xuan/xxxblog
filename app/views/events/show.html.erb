@@ -1,19 +1,19 @@
-<%= react_component("LinkButton", props: {text: 'Back', link: events_path}, prerender: false) %>
+<%= react_component("LinkButton", props: {text: I18n.t('button.backLabel'), link: events_path}, prerender: false) %>
 
 <div class='event-container'>
-  <div class="done-label <%= @event.done ? 'thumbsup-icon' : '' %>"><%= @event.done ? 'Done ' : 'Pending...' %></div>
+  <div class="done-label <%= @event.done ? 'thumbsup-icon' : '' %>"><%= @event.done ? "#{I18n.t('events.show.doneText')} " : I18n.t('events.show.pendingText') %></div>
   <h1><%= @event.name %></h1>
   <h2><%= @event.start_date %></h2>
   <p>
-    <strong>From </strong>
+    <strong><%= I18n.t('events.show.fromText')%> </strong>
     <%= @event.start_hour %>
-    <strong>To</strong>
+    <strong><%= I18n.t('events.show.toText')%></strong>
     <%= @event.end_hour %>
   </p>
   <br>
 
-  <p><strong>Description:</strong><br> <%= text_to_html(@event.description).html_safe %></p>
+  <p><strong><%= I18n.t('events.show.descriptionText') %>:</strong><br> <%= text_to_html(@event.description).html_safe %></p>
 </div>
 
-<%= react_component('LinkButton', props: {text: 'Edit', link: edit_event_path(:id => @event.id)}) %>
-<%= react_component('LinkButton', props: {text: 'Delete', link: delete_event_path(:id => @event.id)}) %>
+<%= react_component('LinkButton', props: {text: I18n.t('button.editLabel'),link: edit_event_path(:id => @event.id)}) %>
+<%= react_component('LinkButton', props: {text: I18n.t('button.deleteLabel'), link: delete_event_path(:id => @event.id)}) %>

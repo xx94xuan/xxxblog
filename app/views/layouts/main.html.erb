@@ -28,9 +28,9 @@
 
     <span class='login-status'>
       <% if session[:login_user] == true %>
-        You are sign in as <span class="user-name"><%= session[:user_name] %></span>. <a href=<%= user_logout_path %>>Log out</a>
+        <%= I18n.t('layouts.signInStatusText')%> <span class="user-name"><%= session[:user_name] %></span>. <a href=<%= user_logout_path %>><%= I18n.t('layouts.logOutText')%></a>
       <% elsif !is_login_page? %>
-        <a href=<%= user_login_path %>>Sign In</a>
+        <a href=<%= user_login_path %>><%= I18n.t('layouts.logInText')%></a>
       <% end %>
     </span>
 

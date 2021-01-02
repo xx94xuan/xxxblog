@@ -2,12 +2,12 @@
   <%= javascript_include_tag 'bundle/realTimeClock-bundle.js' %>
 <% end %>
 
-<h1>Events</h1>
+<h1><%= I18n.t('events.headingText') %></h1>
 
-<div>Day Of The Year: <strong><%= DateTime.now.yday %></strong></div>
+<div><%= I18n.t('events.dayOfYearText') %><strong><%= DateTime.now.yday %></strong></div>
 
 <div id='real-time' style='float:right'></div>
 
-<%= react_component "LinkButton", props: {text: 'Add Event', link: new_event_url} %>
+<%= react_component "LinkButton", props: {text: I18n.t('events.addEventText'), link: new_event_url} %>
 
 <%= render partial: 'events/calendars/monthly' %>

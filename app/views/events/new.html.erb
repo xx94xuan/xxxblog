@@ -6,36 +6,36 @@
 <% end %>
 
 <%= form_with scope: :event, url: events_path, local: true do |form| %>
-  <h1>New an Event</h1>
+  <h1><%= I18n.t('events.newEventText') %></h1>
 
   <p>
-    <%= form.label :name %><br>
+    <%= form.label :name, I18n.t('input.nameLabel') %><br>
     <%= form.text_field :name, class: 'input-block' %>
   </p>
 
   <p>
-    <%= form.label :start_time %><br>
+    <%= form.label :start_time, I18n.t('input.startTimeLabel') %><br>
     <%= form.datetime_field :start_time, class: 'input-block date-picker' %>
   </p>
 
   <p>
-    <%= form.label :end_time %><br>
+    <%= form.label :end_time, I18n.t('input.endTimeLabel') %><br>
     <%= form.datetime_field :end_time, class: 'input-block date-picker' %>
   </p>
 
   <p>
-    <%= form.label :description %><br>
+    <%= form.label :description, I18n.t('input.descriptionLabel') %><br>
     <%= form.text_area :description, id: 'redactor' %>
   </p>
 
   <p>
-    <%= form.label :done %><br>
+    <%= form.label :done, I18n.t('input.doneLabel') %><br>
     <%= form.check_box :done %>
   </p>
   
   <%= render partial: 'messages/error' %>
 
-  <%= react_component('UnionButton', props: { value: 'Save', type: 'submit'} )%>
-  <%= react_component("LinkButton", props: {text: 'Cancel', link: events_path}, prerender: false) %>
+  <%= react_component('UnionButton', props: { value: I18n.t('button.saveText'), type: 'submit'} )%>
+  <%= react_component("LinkButton", props: {text: I18n.t('button.cancelLabel'), link: events_path}, prerender: false) %>
 
 <% end %>

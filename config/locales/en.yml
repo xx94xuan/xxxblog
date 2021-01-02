@@ -30,4 +30,35 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    signInStatusText: 'You are sign in as '
+    logOutText: 'Log out'
+    logInText: 'Sign In'
+  input:
+    nameLabel: 'Name'
+    startTimeLabel: 'Start Time'
+    endTimeLabel: 'End Time'
+    descriptionLabel: 'Description'
+    doneLabel: 'Done'
+  button:
+    saveText: 'Save'
+    updateText: 'Update'
+    cancelLabel: 'Cancel'
+    backLabel: 'Back'
+    editLabel: 'Edit'
+    deleteLabel: 'Delete'
+    newOnePieceLabel: 'New one'
+  events:
+    headingText: 'Events'
+    addEventText: 'Add Event'
+    dayOfYearText: 'Day Of The Year: '
+    newEventText: 'New an Event'
+    show:
+      fromText: 'From'
+      toText: 'To'
+      descriptionText: 'Description'
+      doneText: 'Done'
+      pendingText: 'Pending...'
+  pieces:
+    allPiecesText: 'All Pieces'
+
