@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/', to: 'landing_page#index', as: 'landing_page'
+
   get 'hello_world', to: 'hello_world#index'
   get 'welcome/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
