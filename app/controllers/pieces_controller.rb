@@ -2,6 +2,7 @@ class PiecesController < ApplicationController
   layout 'main'
   
   before_action :init, unless: -> { logged_in? }
+  before_action :fetch_piece, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def new
   end
@@ -17,6 +18,7 @@ class PiecesController < ApplicationController
   def create
     @piece = @user.pieces.new(piece_params)
     @piece.created_at = DateTime.now
+    @piece.updated_at = DateTime.now
     if @piece.save
       redirect_to pieces_path
     else
@@ -25,32 +27,32 @@ class PiecesController < ApplicationController
   end
 
   def show
-    @piece = @user.pieces.find(params[:id])
   end
 
   def edit
-    @piece = @user.pieces.find(params[:id])
   end
 
   def update
-    @piece = @user.pieces.find(params[:id])
     @piece.updated_at = DateTime.now
     if @piece.update(piece_params)
-      redirect_to piece_path(@piece)
+      redirect_to pieces_path(@piece)
     else
       redirect_to edit_piece_path(@piece)
     end
   end
 
   def destroy
-    @piece = @user.pieces.find(params[:id])
     @piece.destroy
     redirect_to pieces_path
   end
 
   private
 
+  def fetch_piece
+    @piece = @user.pieces.find(params[:id])
+  end
+
   def piece_params
-    params.require(:piece).permit(:title, :body, :upadted_at, :created_at)
+    params.require(:piece).permit(:title, :body, :upadted_at, :created_at, :published)
   end
 end

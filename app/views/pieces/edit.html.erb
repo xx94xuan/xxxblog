@@ -18,5 +18,10 @@
     <%= form.text_area :body, id: 'redactor' %>
   </p>
 
+  <p>
+    <%= form.label :public %><br>
+    <%= form.check_box :published %>
+  </p>
+
   <%= react_component('UnionButton', props: { value: 'Update', type: 'submit'} )%>
 <% end %>
