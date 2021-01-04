@@ -73,6 +73,12 @@ h1 {
     color: $lightBlack;
 }
 
+.sent-icon::before {
+  font-family: $fontAwesome5;
+  content: $sentIcon;
+  color: $green;
+}
+
 // ================ LinkButton component ==================
 .btn {
   border: $twoSpace solid $btn;

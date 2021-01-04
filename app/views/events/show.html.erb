@@ -1,4 +1,4 @@
-<%= react_component("LinkButton", props: {text: 'Back', link: events_path}, prerender: false) %>
+<%= react_component("LinkButton", props: {text: 'Back', link: 'javascript:history.back()'}, prerender: false) %>
 
 <div class='event-container'>
   <div class="done-label <%= @event.done ? 'thumbsup-icon' : '' %>"><%= @event.done ? 'Done ' : 'Pending...' %></div>

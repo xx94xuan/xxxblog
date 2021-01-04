@@ -2,6 +2,6 @@
   <%= date.day %>
 
   <% events.each do |event| %>
-    <%= render partial: 'events/calendars/event_show', locals: {event: event} %>
+    <%= render partial: 'events/calendars/event_show', locals: {event: event, today: date.day} %>
   <% end %>
 <% end %>

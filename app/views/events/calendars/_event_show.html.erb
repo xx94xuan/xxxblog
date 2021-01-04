@@ -1,6 +1,8 @@
 <div class="desktop event-infos">
   <div class='row-1'>
-    <span><%= event.start_hour %>~<%= event.end_hour %></span>
+    <% startTime = today == event.start_time.day ? event.start_hour : '00:00' %>
+    <% endTime = today == event.end_time.day ? event.end_hour : '00:00' %>
+    <span><%= startTime %>~<%= endTime %></span>
     <div class='action-icons'>
       <span class="<%= event.done ? 'green-check-icon' : 'gray-check-icon' %>"></span>
       <a class="delete-icon" data-method='delete' href="<%= event_url(:id => event._id) %>"></a>

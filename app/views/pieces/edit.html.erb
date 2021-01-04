@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag 'redactor' %>
 <% end %>
 
-<%= react_component("LinkButton", props: {text: 'Back', link: pieces_path}, prerender: false) %>
+<%= react_component("LinkButton", props: {text: 'Back', link: 'javascript:history.back()'}, prerender: false) %>
 
 <%= form_for @piece do |form| %>
   <p>

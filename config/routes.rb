@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/', to: 'landing_page#index', as: 'landing_page'
+  get '/public_piece_show/:id', to: 'landing_page#public_piece_show', as: 'public_piece'
 
   get 'hello_world', to: 'hello_world#index'
   get 'welcome/index'

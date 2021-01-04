@@ -26,7 +26,6 @@ class PiecesController < ApplicationController
 
   def show
     @piece = @user.pieces.find(params[:id])
-    puts @piece.inspect
   end
 
   def edit
