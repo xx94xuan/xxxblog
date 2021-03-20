@@ -7,5 +7,5 @@
 
 <% if @piece.user == @user %>
   <%= react_component('LinkButton', props: {text: 'Edit', link: edit_piece_path(:id => @piece.id)}) %>
-  <%= react_component('LinkButton', props: {text: 'Delete', link: delete_piece_path(:id => @piece.id)}) %>
-<% end %>
+  <%= react_component('LinkButton', props: {text: 'Delete', link: delete_piece_path(:id => @piece.id), data: {'data-method': 'DELETE', 'data-confirm': 'Are you sure?'}}) %>
+  <% end %>

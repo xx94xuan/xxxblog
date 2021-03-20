@@ -10,7 +10,7 @@ class Event
   field :created_at, type: DateTime
   field :done, type: Boolean, default: false
 
-  belongs_to :user, dependent: :nullify
+  belongs_to :user
 
   index(time: -1)
 

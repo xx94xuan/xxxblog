@@ -9,7 +9,7 @@ class Piece
   field :updated_at, type: DateTime
   field :created_at, type: DateTime
 
-  belongs_to :user, dependent: :nullify
+  belongs_to :user
 
   index(updated_at: -1)
 end

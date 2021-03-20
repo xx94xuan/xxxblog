@@ -16,4 +16,4 @@
 </div>
 
 <%= react_component('LinkButton', props: {text: 'Edit', link: edit_event_path(:id => @event.id)}) %>
-<%= react_component('LinkButton', props: {text: 'Delete', link: delete_event_path(:id => @event.id)}) %>
+<%= react_component('LinkButton', props: {text: 'Delete', link: delete_event_path(:id => @event.id), data: {'data-method': 'DELETE', 'data-confirm': 'Are you sure?'}}) %>
