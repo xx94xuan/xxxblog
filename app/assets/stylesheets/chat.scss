@@ -1,0 +1,67 @@
+.room-body {
+  height: 600px;
+  width: 100%;
+  background-color: beige;
+}
+
+.room-header {
+  background-color: burlywood;
+}
+
+.chat-pane {
+  background-color: black;
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+
+  #messages {
+    display: flex;
+    flex-direction: column;
+
+    .msg {
+      height: 15px;
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+      width: fit-content;
+      border-radius: 8px;
+      background-color: white;
+  
+      &.received {
+        background-color: pink;
+        align-self: flex-start;
+      }
+    
+      &.sent {
+        background-color: orchid;
+        align-self: flex-end;
+      }
+
+      .sender {
+        color: lightgray;
+        font-style: italic;
+      }
+    }
+  }
+
+  #send_messages {
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+
+    #message {
+      width: 88%;
+      height: 25px;
+    }
+
+    .send-btn {
+      background-color: chartreuse;
+      border-radius: 4px;
+      height: 30px;
+    }
+  }
+}

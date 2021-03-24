@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete '/events/:id/delete', to: 'events#destroy', as: 'delete_event'
   resources :events
 
+  resources :chats
 end

@@ -14,6 +14,12 @@ var config = {
       './src/components/registration.jsx',
       './src/real_time_clock.js'
     ],
+    channels: [
+      './src/channels/index.js',
+      './src/channels/consumer.js',
+      './src/channels/chat_room_channel.js',
+      './src/channels/chats.js'
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascript', 'bundle'),

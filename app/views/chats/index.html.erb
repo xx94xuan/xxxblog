@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'bundle/channels-bundle.js' %>
+<% end %>
+
+<div class='room-body'>
+  <div class='room-header'>
+    <h1>chat room</h1>
+  </div>
+  <div class='chat-pane'>
+    <div id='messages'></div>
+    <form id='send_messages'>
+      <input type='text' id='message' name='message' >
+      <button class='send-btn'>Send</button>
+    </form>
+  </div>
+</div>

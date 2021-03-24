@@ -13,6 +13,14 @@
 
     <%= render partial: 'scripts/font_awesome'%>
 
+    <script id="metadata">
+      window.Metadata = {
+        sessions: {
+          current_user_name: "<%= session['user_name'] %>"
+        }
+      };
+    </script>
+
     <%= yield :head %>
   </head>
 
