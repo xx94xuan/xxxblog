@@ -28,7 +28,7 @@ yarn-debug.log*
 
 .vscode
 
-/TODOList.md
+/notes
 
 /app/assets/javascript/bundle/*
 
