@@ -25,15 +25,17 @@
   </head>
 
   <body>
-    <%= react_component('Header',
-      props: {
-        pieces_path: pieces_path,
-        events_path: events_path,
-        login_path: user_login_path,
-        register_path: new_user_path,
-        landing_page_path: landing_page_path
-      }, prerender: false)
-    %>
+    <% cache('header_nav', expires_in: 1.day) do %>
+      <%= react_component('Header',
+        props: {
+          pieces_path: pieces_path,
+          events_path: events_path,
+          login_path: user_login_path,
+          register_path: new_user_path,
+          landing_page_path: landing_page_path
+        }, prerender: false)
+      %>
+    <% end %>
 
     <span class='login-status'>
       <% if session[:login_user] == true %>
